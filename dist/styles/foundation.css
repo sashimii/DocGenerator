@@ -55,7 +55,7 @@ body {
   font-size: 100%; }
 
 body {
-  background: #fff;
+  background: #e5e5e5;
   color: #222;
   cursor: auto;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
@@ -10217,3 +10217,14 @@ th.hide-for-touch {
 .adjust-recipe-button {
   margin-top: 0.65rem;
   margin-left: 0.75rem; }
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  float: left; }
+
+.sidebar-item {
+  background-color: #fafafa;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center; }

@@ -8,7 +8,10 @@
     "url": "https://github.com/sashimii/FactoryModDocs"
   },
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "keywords": [
     "gulp",
@@ -38,16 +41,17 @@
     "history": "^2.0.0",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
-    "react-router": "^2.0.0"
+    "react-router": "^2.0.0",
+    "showdown": "^1.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",
     "ava": "^0.9.1",
-    "axios":"^0.9.1",
+    "axios": "^0.9.1",
     "babel": "^6.3.13",
     "babel-core": "^6.3.17",
     "babel-eslint": "^5.0.0",
-    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.3.13",
     "babelify": "^7.2.0",
     "browser-sync": "^2.9.1",
@@ -60,9 +64,9 @@
     "gulp-html-replace": "^1.5.1",
     "gulp-imagemin": "^2.4.0",
     "gulp-notify": "^2.2.0",
-    "gulp-sass": "^2.2.0",
     "gulp-postcss": "^6.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.4.0",
     "imagemin-pngquant": "^4.2.0",
@@ -77,6 +81,6 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.4.0",
-    "yamljs" : "^0.2.6"
+    "yamljs": "^0.2.6"
   }
 }
