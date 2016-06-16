@@ -1,0 +1,61 @@
+{
+  "factory" : {
+    "Basic Contraptions" : {
+      "name" : "Basic Contraptions",
+      "type" : "FCC",
+      "setupcost" : {
+        "items" : [
+          {
+            "name" : "planks",
+            "material" : "WOOD",
+            "durability" : -1,
+            "amount" : 64
+          },
+          {
+            "name" : "stone",
+            "material" : "STONE",
+            "durability" : null,
+            "amount" : 64
+          },
+          {
+            "name" : "bread",
+            "material" : "BREAD",
+            "durability" : null,
+            "amount" : 32
+          }
+        ]
+      },
+      "recipes" : [
+        {
+          "name" : "Smelt Stone",
+          "type" : "PRODUCTION",
+          "production_time" : "20s",
+          "inputs" : [
+            {
+              "name" : "sobblestone",
+              "material" : "COBBLESTONE",
+              "amount" : 64
+            }
+          ],
+          "outputs" : [
+            {
+              "name" : "stone",
+              "material" : "STONE",
+              "amount" : 64
+            }
+          ]
+
+        }
+      ],
+      "children" : [
+        "Stone Smelter",
+        "Farmstead Factory",
+        "Blacksmith",
+        "Laboratory",
+        "Wood Processor"
+      ],
+      "parent": null
+    }
+  }
+
+}
