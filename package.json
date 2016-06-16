@@ -1,11 +1,11 @@
 {
-  "name": "FactoryModDocs",
+  "name": "DocGenerator",
   "version": "0.0.1",
   "description": "React JS application skeleton using Browserify and other awesome tools",
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sashimii/FactoryModDocs"
+    "url": "https://github.com/sashimii/DocGenerator"
   },
   "babel": {
     "presets": [
