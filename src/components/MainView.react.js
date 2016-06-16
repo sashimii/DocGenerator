@@ -14,8 +14,6 @@ export default class MainView extends React.Component {
     super(props);
   }
 
-
-
   render() {
     const _articleWithMarkdown = (rawMarkdown) => {
       console.log(rawMarkdown);
