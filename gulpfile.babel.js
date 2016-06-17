@@ -23,6 +23,8 @@ import imagemin from 'gulp-imagemin';
 import pngquant from 'imagemin-pngquant';
 import runSequence from 'run-sequence';
 import ghPages from 'gulp-gh-pages';
+import dirTree from './lib/dirTree';
+import fs from 'fs';
 
 const paths = {
   bundle: 'app.js',
@@ -77,6 +79,15 @@ gulp.task('watchify', () => {
   bundler.transform(babelify)
   .on('update', rebundle);
   return rebundle();
+});
+
+gulp.task('createDirTree', () => {
+  fs.writeFile('./src/routes/directory-tree.json', JSON.stringify(dirTree('./src/data')), (err, data) => {
+    if(err) {
+      return console.log(err);
+    }
+    console.log(data);
+  })
 });
 
 gulp.task('browserify', () => {
@@ -144,6 +155,7 @@ gulp.task('lint', () => {
 gulp.task('watchTask', () => {
   gulp.watch(paths.srcCss, ['sass']);
   gulp.watch(paths.srcJsx, ['lint']);
+  gulp.watch(paths.data, ['createDirTree']);
 });
 
 gulp.task('deploy', function() {
@@ -152,7 +164,7 @@ gulp.task('deploy', function() {
 });
 
 gulp.task('default', cb => {
-  runSequence('clean', ['browserSync', 'watchTask', 'watchify', 'sass', 'data', 'fonts', 'lint', 'images'], cb);
+  runSequence('clean', ['createDirTree', 'browserSync', 'watchTask', 'watchify', 'sass', 'data', 'fonts', 'lint', 'images'], cb);
 });
 
 gulp.task('build', cb => {
