@@ -112,11 +112,11 @@ gulp.task('browserify', () => {
 //   .pipe(reload({stream: true}));
 // });
 
-gulp.task('sass', () => {
-  gulp.src('./src/styles/*.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest('./dist/styles'))
-  .pipe(reload({stream: true}));
+gulp.task('sass', () => { // Declares the task "sass"
+  gulp.src('./src/styles/*.scss') // Tells gulp what the source folder is and tells it to look at ALL SCSS files
+  .pipe(sass().on('error', sass.logError)) // Compiles SCSS into CSS. It also handles any errors that come about
+  .pipe(gulp.dest('./dist/styles')) // Tells gulp where to put the CSS compiled from SCSS
+  .pipe(reload({stream: true})); // Reloads the browser! The browser then uses the newly compiled CSS styles that you edited the SCSS for!
 });
 
 gulp.task('data', () =>{
@@ -163,11 +163,11 @@ gulp.task('deploy', function() {
     .pipe(ghPages());
 });
 
-gulp.task('default', cb => {
+gulp.task('default', cb => { // When running 'gulp' in command line, it runs the listed tasks in sequence. This is meant for your dev environment
   runSequence('clean', ['createDirTree', 'browserSync', 'watchTask', 'watchify', 'sass', 'data', 'fonts', 'lint', 'images'], cb);
 });
 
-gulp.task('build', cb => {
+gulp.task('build', cb => { // When running 'gulp build' in command line, it runs the listed tasks in sequence. This is meant for your build
   process.env.NODE_ENV = 'production';
   runSequence('clean', ['browserify', 'sass', 'data', 'htmlReplace', 'fonts', 'images'], cb);
 });
